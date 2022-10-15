@@ -3,13 +3,10 @@
   <!-- Define Persistence Unit -->
   <persistence-unit name="GruposTrabalhoPU" transaction-type="JTA">
     <jta-data-source>java:/GruposTrabalhoDS</jta-data-source>
-    <class>io.github.danielalvesfonsecaneto.grupostrabalhos.telefone.Telefone</class>
-    <class>io.github.danielalvesfonsecaneto.grupostrabalhos.atuacao.Atuacao</class>
-    <class>io.github.danielalvesfonsecaneto.grupostrabalhos.pessoa.Pessoa</class>
-    <class>io.github.danielalvesfonsecaneto.grupostrabalhos.grupo.Grupo</class>
-    <class>io.github.danielalvesfonsecaneto.grupostrabalhos.endereco.Endereco</class>
     <properties>
       <property name="javax.persistence.schema-generation.database.action" value="drop-and-create"/>
+      <property name="hibernate.show_sql" value="true"/>
+      <property name="hibernate.format_sql" value="true"/>
     </properties>
   </persistence-unit>
 </persistence>

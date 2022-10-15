@@ -4,13 +4,19 @@
  */
 package io.github.danielalvesfonsecaneto.grupostrabalhos.atuacao;
 
+import io.github.danielalvesfonsecaneto.grupostrabalhos.grupo.Grupo;
+import io.github.danielalvesfonsecaneto.grupostrabalhos.pessoa.Pessoa;
 import java.io.Serializable;
 import java.time.LocalDate;
+import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
+import javax.persistence.OneToOne;
 
 /**
  *
@@ -29,6 +35,14 @@ public class Atuacao implements Serializable {
     
     @Column
     private LocalDate termino;
+    
+    @OneToOne(cascade = CascadeType.ALL, orphanRemoval = true)
+    @JoinColumn(name = "pessoa_id")
+    private Pessoa pessoa;
+    
+    @ManyToOne(cascade = CascadeType.ALL)
+    @JoinColumn(name = "grupo_id")
+    private Grupo grupo;
     
     public Long getId() {
         return id;
@@ -54,11 +68,33 @@ public class Atuacao implements Serializable {
     public void setTermino(LocalDate termino) {
         this.termino = termino;
     }
+    
+     public Pessoa getPessoa() {
+        return pessoa;
+    }
+
+    
+    public void setPessoa(Pessoa pessoa) {
+        this.pessoa = pessoa;
+    }
+
+    
+    public Grupo getGrupo() {
+        return grupo;
+    }
+
+    
+    public void setGrupo(Grupo grupo) {
+        this.grupo = grupo;
+    }
+
 
     @Override
     public String toString() {
-        return "io.github.danielalvesfonsecaneto.grupostrabalhos.atuacao.Atuacao[ id=" + id + " ]";
+        return "io.github.danielalvesfonsecaneto.grupostrabalhos.atuacao.Atuacao[ id=" + getId() + " ]";
     }
 
+    
+   
     
 }
