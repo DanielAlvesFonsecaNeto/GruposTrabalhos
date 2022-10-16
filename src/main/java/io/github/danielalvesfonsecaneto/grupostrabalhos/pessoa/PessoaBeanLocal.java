@@ -4,6 +4,7 @@
  */
 package io.github.danielalvesfonsecaneto.grupostrabalhos.pessoa;
 
+import java.util.List;
 import javax.ejb.Local;
 
 /**
@@ -13,5 +14,22 @@ import javax.ejb.Local;
 @Local
 public interface PessoaBeanLocal {
  public void save(Pessoa pessoa);
+ 
+ public List<Pessoa> pessoaQuerryTodas();
+ 
+ public List<Pessoa> pessoaTypedQuerryTodas();
+ 
+ public List<Pessoa> pessoaNamedQuerryTodas();
+ 
+ 
+ 
+ public List<Pessoa> pessoaQuerryNome();
+ 
+ public List<Pessoa> pessoaTypedQuerryNome();
+ 
+ public List<Pessoa> pessoaNamedQuerryNome();
      
+ 
+ 
+ 
 }

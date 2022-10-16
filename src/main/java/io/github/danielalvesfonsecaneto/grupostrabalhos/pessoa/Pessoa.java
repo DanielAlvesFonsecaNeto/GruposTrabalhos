@@ -169,7 +169,8 @@ public class Pessoa implements Serializable {
     
     @Override
     public String toString() {
-        return "io.github.danielalvesfonsecaneto.grupostrabalhos.pessoa.Pessoa[ id=" + getId() + " ]";
+        return "Pessoa{" + "id=" + id + ", nome=" + nome + ", email=" + email + ", nascimento=" + nascimento + ", idade=" + idade + ", endereco=" + endereco + ", telefones=" + telefones +"}";
+    //return "io.github.danielalvesfonsecaneto.grupostrabalhos.pessoa.Pessoa[ id=" + getId() + " ]";
     }
 
     
